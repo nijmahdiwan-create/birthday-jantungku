@@ -57,12 +57,15 @@
         <strong>Berpayung Tuhan</strong>
         <span>Nadin Amizah · lagu pengiring</span>
       </div>
-      <label class="music-button" for="audioFile" title="Pilih file audio dari perangkat">♫ <span>Pasang lagu</span></label>
-      <input type="file" id="audioFile" accept="audio/*" hidden>
-      <audio id="song" controls preload="none"></audio>
-    </footer>
-    <p class="music-note-small">Pilih file audio yang kamu miliki secara sah agar lagu bisa diputar. Musik tidak otomatis menyala karena browser biasanya memerlukan sentuhan pengguna.</p>
-    <p class="closing">made with love under the same sky <span>✦</span></p>
+     <audio id="song" controls loop preload="metadata">
+  <source src="./berpayung%20tuhan%20(1).mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung pemutar audio.
+</audio>
+</footer>
+
+<p class="closing">
+  made with love under the same sky <span>✦</span>
+</p>
   </main>
   <script src="script.js"></script>
 </body>
