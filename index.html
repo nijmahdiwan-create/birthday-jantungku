@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d24">
+  <title>Untuk Sayang ✦</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="moon"></div>
+    <div class="stars" id="stars"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+  </div>
+
+  <main class="site-shell">
+    <p class="eyebrow"><span>✦</span> A little universe, just for you <span>✦</span></p>
+
+    <section class="intro" id="intro">
+      <div class="tiny-orbit" aria-hidden="true"><span>✧</span><span>·</span><span>✦</span></div>
+      <h1>Happy birthday,<br><em>Sayang.</em></h1>
+      <p class="intro-copy">Malam ini, semoga semesta terasa sedikit lebih hangat—karena seseorang yang istimewa sedang bertambah usia.</p>
+      <button class="primary-button" id="openLetter">Buka surat kecilku <span>↗</span></button>
+      <p class="scroll-hint">dibuat khusus untukmu · dengan banyak doa</p>
+    </section>
+
+    <section class="letter hidden" id="letter" aria-live="polite">
+      <div class="letter-top"><span>✦ SURAT KECIL UNTUK SAYANG</span><span id="pageCount">01 / 04</span></div>
+      <div class="letter-content">
+        <p class="letter-kicker" id="kicker">Untuk hari istimewamu</p>
+        <h2 id="letterTitle">Selamat bertambah usia.</h2>
+        <p class="letter-text" id="letterText">Hari ini adalah tentang kamu—tentang hadirnya seseorang yang punya tempat istimewa di hidupku.</p>
+      </div>
+      <div class="letter-bottom">
+        <span class="page-dots" id="pageDots"><i class="active"></i><i></i><i></i><i></i></span>
+        <button class="next-button" id="nextPage">Lanjut <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="wish hidden" id="wish">
+      <div class="wish-star">✦</div>
+      <p class="letter-kicker">Satu doa lagi, sebelum malam selesai</p>
+      <h2>Semoga banyak hal baik<br>menemukan jalannya ke kamu.</h2>
+      <p class="wish-copy">Semoga sehatmu dijaga, langkahmu dimudahkan, hatimu ditenangkan, dan hal-hal yang sedang kamu usahakan pelan-pelan mendekat menjadi nyata. Semoga kamu selalu punya alasan untuk tersenyum—hari ini, dan di hari-hari biasa setelahnya.</p>
+      <p class="signature">Dengan sayang,<br><em>aku.</em></p>
+      <button class="secondary-button" id="replay">Baca lagi dari awal ↺</button>
+    </section>
+
+    <footer class="music-footer">
+      <div class="music-note" aria-hidden="true">♫</div>
+      <div class="music-meta">
+        <strong>Berpayung Tuhan</strong>
+        <span>Nadin Amizah · lagu pengiring</span>
+      </div>
+      <label class="music-button" for="audioFile" title="Pilih file audio dari perangkat">♫ <span>Pasang lagu</span></label>
+      <input type="file" id="audioFile" accept="audio/*" hidden>
+      <audio id="song" controls preload="none"></audio>
+    </footer>
+    <p class="music-note-small">Pilih file audio yang kamu miliki secara sah agar lagu bisa diputar. Musik tidak otomatis menyala karena browser biasanya memerlukan sentuhan pengguna.</p>
+    <p class="closing">made with love under the same sky <span>✦</span></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

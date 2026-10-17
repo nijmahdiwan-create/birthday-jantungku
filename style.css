@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+:root { --night: #080d24; --night2: #111936; --cream: #f8f0e4; --muted: #b9bfd7; --gold: #e8cc91; }
+html { min-height: 100%; }
+body {
+  margin: 0; min-height: 100vh; color: var(--cream); overflow-x: hidden;
+  background: radial-gradient(ellipse at 50% 5%, #1b2851 0%, #0d1531 36%, var(--night) 78%);
+  font-family: 'DM Sans', sans-serif;
+}
+.sky { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.moon { position: absolute; top: 7%; right: 12%; width: 86px; height: 86px; border-radius: 50%; background: #fff2d4; box-shadow: 0 0 24px #ffe6ac66, 0 0 85px #c4d7ff25; }
+.moon::after { content: ""; position: absolute; top: -8px; left: 21px; width: 84px; height: 84px; border-radius: 50%; background: #111a39; }
+.stars { position: absolute; inset: 0; }
+.star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff4d8; opacity: .7; animation: twinkle 3s ease-in-out infinite alternate; }
+.star.big { width: 4px; height: 4px; box-shadow: 0 0 10px #fff0c2; }
+.glow { position: absolute; border-radius: 50%; filter: blur(65px); opacity: .2; }
+.glow-one { width: 230px; height: 230px; background: #7461bf; left: -80px; top: 36%; }
+.glow-two { width: 260px; height: 260px; background: #2b7d99; right: -120px; bottom: 8%; }
+.site-shell { position: relative; z-index: 1; width: min(720px, calc(100% - 36px)); margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 34px 0 24px; }
+.eyebrow { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: #c6cce2; text-align: center; }
+.eyebrow span { color: var(--gold); margin: 0 8px; }
+.intro { text-align: center; width: 100%; margin: auto 0; padding: 70px 0 55px; animation: fadeIn .9s ease both; }
+.tiny-orbit { color: var(--gold); font-size: 19px; display: flex; align-items: center; justify-content: center; gap: 17px; margin-bottom: 20px; }
+h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+h1 { font-size: clamp(48px, 10vw, 82px); line-height: 1.03; letter-spacing: -.04em; margin: 0; }
+h1 em, .signature em { color: var(--gold); font-weight: 500; }
+.intro-copy { max-width: 410px; margin: 24px auto 30px; color: var(--muted); line-height: 1.8; font-size: 14px; }
+button { font: inherit; cursor: pointer; }
+.primary-button, .secondary-button, .next-button { border: 0; transition: transform .2s ease, background .2s ease; }
+.primary-button { color: #15172b; background: var(--gold); border-radius: 999px; padding: 14px 22px; font-size: 13px; font-weight: 600; box-shadow: 0 8px 28px #e8cc9120; }
+.primary-button span { margin-left: 16px; font-size: 17px; }
+.primary-button:hover, .next-button:hover, .secondary-button:hover { transform: translateY(-2px); }
+.scroll-hint { margin-top: 22px; font-size: 10px; letter-spacing: .12em; color: #858eaf; }
+.hidden { display: none !important; }
+.letter, .wish { width: min(100%, 550px); margin: auto 0; animation: fadeIn .65s ease both; }
+.letter { border: 1px solid #d7d9ee35; background: linear-gradient(145deg, #ffffff0d, #ffffff04); backdrop-filter: blur(12px); border-radius: 20px; padding: 22px 25px 20px; box-shadow: 0 25px 90px #00000020; }
+.letter-top, .letter-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.letter-top { font-size: 9px; letter-spacing: .16em; color: #aeb8d8; }
+#pageCount { color: var(--gold); white-space: nowrap; }
+.letter-content { min-height: 270px; display: flex; flex-direction: column; justify-content: center; padding: 30px 3px; }
+.letter-kicker { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.letter h2, .wish h2 { font-size: clamp(29px, 6vw, 42px); line-height: 1.2; margin: 10px 0 17px; letter-spacing: -.02em; }
+.letter-text, .wish-copy { color: #d2d7e8; font-size: 14px; line-height: 1.95; white-space: pre-line; }
+.letter-bottom { border-top: 1px solid #d7d9ee20; padding-top: 18px; }
+.page-dots { display: flex; gap: 6px; }
+.page-dots i { width: 5px; height: 5px; background: #69718e; border-radius: 50%; }
+.page-dots i.active { background: var(--gold); box-shadow: 0 0 9px #e8cc9166; }
+.next-button { background: transparent; color: var(--gold); font-size: 12px; padding: 8px 0 8px 12px; }
+.next-button span { margin-left: 10px; font-size: 18px; }
+.wish { text-align: center; padding: 30px 8px; }
+.wish-star { color: var(--gold); font-size: 24px; margin-bottom: 18px; }
+.wish h2 { margin-bottom: 20px; }
+.wish-copy { max-width: 480px; margin: 0 auto; }
+.signature { color: #d2d7e8; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; line-height: 1.6; margin-top: 28px; }
+.secondary-button { color: var(--cream); border: 1px solid #e8cc9155; background: #ffffff08; padding: 11px 16px; border-radius: 999px; font-size: 12px; margin-top: 12px; }
+.music-footer { width: min(100%, 550px); display: flex; align-items: center; gap: 13px; border: 1px solid #ffffff1a; border-radius: 16px; background: #ffffff08; padding: 12px 14px; margin-top: auto; }
+.music-note { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 12px; color: var(--gold); background: #e8cc9114; font-size: 22px; }
+.music-meta { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.music-meta strong { font-size: 12px; font-weight: 600; }
+.music-meta span { font-size: 10px; color: #aeb8d8; }
+.music-button { cursor: pointer; color: var(--gold); font-size: 17px; padding: 7px; }
+.music-button span { font-size: 10px; }
+#song { width: 100%; max-width: 130px; height: 32px; }
+.music-note-small { max-width: 500px; text-align: center; font-size: 10px; line-height: 1.6; color: #818baa; margin: 9px 0 18px; }
+.closing { color: #737d9f; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; text-align: center; margin: 0; }
+.closing span { color: var(--gold); margin-left: 5px; }
+@keyframes twinkle { from { opacity: .25; transform: scale(.75); } to { opacity: .9; transform: scale(1.15); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 520px) {
+  .site-shell { width: calc(100% - 28px); padding-top: 20px; }
+  .moon { width: 62px; height: 62px; right: 8%; top: 8%; }
+  .moon::after { width: 61px; height: 61px; left: 15px; top: -6px; }
+  .intro { padding: 70px 0 45px; }
+  .letter { padding: 18px; }
+  .letter-content { min-height: 300px; }
+  .music-footer { gap: 8px; padding: 10px; flex-wrap: wrap; }
+  #song { max-width: 100%; flex-basis: 100%; }
+  .music-button { margin-left: auto; }
+}
